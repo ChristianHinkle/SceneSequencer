@@ -1,0 +1,71 @@
+{
+    "$id": "https://raw.githubusercontent.com/ChristianHinkle/SceneSequencer/refs/heads/main/scnseq_schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "entities": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "required": ["id"]
+            }
+        },
+        "timeline": {
+            "type": "object",
+            "properties": {
+                "timing": {
+                    "type": "object",
+                    "properties": {
+                        "fps": {
+                            "type": "integer"
+                        },
+                        "end": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": ["fps", "end"]
+                },
+                "tracks": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "subtracks": {
+                                "type": "array"
+                            }
+                        },
+                        "required": ["id", "type"]
+                    }
+                },
+                "keys": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "frame": {
+                                "type": "integer"
+                            },
+                            "tracks": {
+                                "type": "array"
+                            }
+                        },
+                        "required": ["frame", "tracks"]
+                    }
+                }
+            },
+            "required": ["timing"]
+        }
+    },
+    "required": ["timeline"]
+}
