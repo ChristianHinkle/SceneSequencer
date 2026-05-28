@@ -29,6 +29,18 @@
                         },
                         "required": ["identifier"]
                     }
+                },
+                "audioClips": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["identifier"]
+                    }
                 }
             }
         },
