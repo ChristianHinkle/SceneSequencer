@@ -22,10 +22,12 @@
                     "type": "object",
                     "properties": {
                         "fps": {
-                            "type": "integer"
+                            "type": "integer",
+                            "minimum": 0
                         },
                         "end": {
-                            "type": "integer"
+                            "type": "integer",
+                            "minimum": 1
                         }
                     },
                     "required": ["fps", "end"]
@@ -54,7 +56,8 @@
                         "type": "object",
                         "properties": {
                             "frame": {
-                                "type": "integer"
+                                "type": "integer",
+                                "minimum": 1
                             },
                             "tracks": {
                                 "type": "array"
